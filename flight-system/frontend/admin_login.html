@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Admin Login</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            margin: 0;
+            background-image: url("https://wallpaperbat.com/img/152445212-airplane-window-view-picture.jpg");
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            font-family: Arial, sans-serif;
+        }
+        .overlay {
+            position: fixed;
+            inset: 0;
+            background: rgba(1, 9, 52, 0.55);
+            backdrop-filter: blur(2px);
+            z-index: -1;
+        }
+        .login-box {
+            width: 300px;
+            margin: 120px auto;
+            background: rgba(222, 203, 203, 0.422);
+            padding: 25px;
+            border-radius: 10px;
+            color: white;
+        }
+        input {
+            width: 100%;
+            padding: 10px;
+            margin: 8px 0;
+            border-radius: 6px;
+            border: none;
+        }
+        button {
+            width: 100%;
+            padding: 10px;
+            background: #4f8cff;
+            border: none;
+            border-radius: 6px;
+            color: white;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+<div class="overlay"></div>
+
+<div class="login-box">
+    <h2>Admin Login</h2>
+    <input id="username" placeholder="Username">
+    <input id="password" type="password" placeholder="Password">
+    <button onclick="login()">Login</button>
+    <div id="msg"></div>
+</div>
+
+
+<script>
+async function login() {
+    const username = document.getElementById("username").value.trim();
+    const password = document.getElementById("password").value.trim();
+    const msg = document.getElementById("msg");
+
+    try {
+        const res = await fetch("http://127.0.0.1:5000/api/admin/login", {
+            method: "POST",
+            headers: {"Content-Type": "application/json"},
+            body: JSON.stringify({username, password})
+        });
+
+        const data = await res.json();
+
+        if (data.success) {
+            msg.textContent = "Login successful";
+            localStorage.setItem("admin", "true");
+            window.location.href = "admin_dashboard.html";
+        } else {
+            msg.textContent = data.message || "Invalid credentials";
+        }
+    } catch (err) {
+        msg.textContent = "Error connecting to server";
+        console.error(err);
+    }
+}
+</script>
+
+</body>
+</html>

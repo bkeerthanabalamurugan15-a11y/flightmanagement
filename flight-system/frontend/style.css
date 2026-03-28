@@ -1,0 +1,149 @@
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  display: flex;
+  background: #f4f6f9;
+}
+
+/* Sidebar */
+.sidebar {
+  width: 220px;
+  background: #0a0f2d;
+  color: white;
+  padding: 20px;
+  height: 100vh;
+}
+.sidebar h2 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+.sidebar nav a {
+  display: block;
+  padding: 10px;
+  color: white;
+  text-decoration: none;
+  margin-bottom: 10px;
+  border-radius: 6px;
+}
+.sidebar nav a.active,
+.sidebar nav a:hover {
+  background: #4f8cff;
+}
+
+/* Main content */
+.main {
+  flex: 1;
+  padding: 20px;
+}
+.topbar {
+  background: #fff;
+  padding: 20px;
+  border-bottom: 1px solid #ddd;
+}
+
+/* Search form */
+.search {
+  display: flex;
+  gap: 10px;
+  margin: 20px 0;
+}
+.search input,
+.search select {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  flex: 1;
+}
+.search-btn {
+  background: #ff4f6a;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+/* Flight cards */
+.popular-routes {
+  margin-top: 20px;
+}
+.route-card {
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  margin-bottom: 20px;
+}
+.route-card button {
+  margin-right: 10px;
+  padding: 8px 12px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+.route-card button:first-of-type {
+  background: #4f8cff;
+  color: white;
+}
+.route-card button:last-of-type {
+  background: #00d4ff;
+  color: #0a0f2d;
+}
+
+/* Dashboard */
+.dashboard canvas {
+  max-width: 400px;
+  margin: 20px 0;
+}
+.dashboard table {
+  width: 100%;
+  border-collapse: collapse;
+}
+.dashboard th, .dashboard td {
+  border: 1px solid #ccc;
+  padding: 8px;
+  text-align: left;
+}
+
+/* Boarding pass */
+.boarding {
+  text-align: center;
+  margin-top: 40px;
+}
+.boarding canvas {
+  background: white;
+  border-radius: 12px;
+  margin-bottom: 12px;
+}
+.boarding button {
+  background: #4f8cff;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+.booking-form {
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  margin-top: 20px;
+}
+.booking-form h2 {
+  margin-bottom: 15px;
+}
+.form-row {
+  margin-bottom: 12px;
+  display: flex;
+  flex-direction: column;
+}
+.form-row label {
+  font-weight: bold;
+  margin-bottom: 6px;
+}
+.form-row input, .form-row select {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+}

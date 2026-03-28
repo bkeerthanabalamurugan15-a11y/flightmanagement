@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>SASTHA Airlines</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <aside class="sidebar">
+    <div class="logo">
+      <img src="assets/logo.svg" alt="SASTHA Logo">
+      <h2>SASTHA</h2>
+    </div>
+    <nav>
+      <a href="index.html" class="active">Home</a>
+      <a href="user.html">Booking</a>
+      <a href="admin_dashboard.html">Dashboard</a>
+      <a href="boarding_pass.html">Boarding Pass</a>
+      <a href="#" onclick="logout()">Logout</a>
+    </nav>
+  </aside>
+
+  <main class="main">
+    <header class="topbar">
+      <h1>Find your next flight</h1>
+      <p>Best deals, flexible dates, and a smooth booking experience.</p>
+      <button class="support">Support</button>
+    </header>
+
+    <section class="search">
+      <input type="text" placeholder="From: Chennai MAA">
+      <input type="text" placeholder="To: Delhi DEL">
+      <input type="date">
+      <input type="date">
+      <select>
+        <option>Economy</option>
+        <option>Business</option>
+        <option>First</option>
+      </select>
+      <button class="search-btn">Search flights</button>
+    </section>
+
+    <section class="popular-routes">
+      <h2>Popular routes</h2>
+      <div class="route-card">
+        <h3>MAA → BLR</h3>
+        <p>Non-stop – 1 h 5m</p>
+        <p>SkyBridge 719</p>
+        <p>Economy from ₹2199</p>
+        <button>Details</button>
+        <button>Book</button>
+      </div>
+      <div class="route-card">
+        <h3>MAA → DEL</h3>
+        <p>1 stop – 3 h 20m</p>
+        <p>SkyBridge 914</p>
+        <p>Business from ₹9999</p>
+        <button>Details</button>
+        <button>Book</button>
+      </div>
+      <div class="route-card">
+        <h3>MAA → BOM</h3>
+        <p>Non-stop – 2 h</p>
+        <p>SkyBridge 332</p>
+        <p>Economy from ₹9199</p>
+        <button>Details</button>
+        <button>Book</button>
+      </div>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>SASTHA Airlines - Booking</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Sidebar -->
+  <aside class="sidebar">
+    <h2>SASTHA</h2>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="user.html" class="active">Booking</a>
+      <a href="admin_dashboard.html">Dashboard</a>
+      <a href="boarding_pass.html">Boarding Pass</a>
+      <a href="#" onclick="logout()">Logout</a>
+    </nav>
+  </aside>
+
+  <!-- Main content -->
+  <main class="main">
+    <header class="topbar">
+      <h1>Book Your Flight</h1>
+      <p>Fill in your details to confirm your booking.</p>
+    </header>
+
+    <!-- Flight search -->
+    <section class="search">
+      <input type="text" id="fromCity" placeholder="From: Chennai MAA">
+      <input type="text" id="toCity" placeholder="To: Delhi DEL">
+      <input type="date" id="departDate">
+      <input type="date" id="returnDate">
+      <select id="travelClass">
+        <option>Economy</option>
+        <option>Business</option>
+        <option>First</option>
+      </select>
+    </section>
+
+    <!-- Passenger details -->
+    <section class="booking-form">
+      <h2>Passenger Details</h2>
+      <div class="form-row">
+        <label>Name</label>
+        <input type="text" id="name" placeholder="Enter full name">
+      </div>
+      <div class="form-row">
+        <label>Date of Birth</label>
+        <input type="date" id="dob">
+      </div>
+      <div class="form-row">
+        <label>Aadhaar Number</label>
+        <input type="text" id="aadhaar" placeholder="Enter Aadhaar number">
+      </div>
+      <div class="form-row">
+        <label>Phone Number</label>
+        <input type="tel" id="phone" placeholder="Enter phone number">
+      </div>
+      <div class="form-row">
+        <label>Email ID</label>
+        <input type="email" id="email" placeholder="Enter email address">
+      </div>
+      <button class="search-btn" onclick="bookFlight()">Book Flight</button>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>

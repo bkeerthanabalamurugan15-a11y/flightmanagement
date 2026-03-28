@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>SASTHA Airlines - Boarding Pass</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <aside class="sidebar">
+    <h2>SASTHA</h2>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="user.html">Booking</a>
+      <a href="admin_dashboard.html">Dashboard</a>
+      <a href="boarding_pass.html" class="active">Boarding Pass</a>
+      <a href="#" onclick="logout()">Logout</a>
+    </nav>
+  </aside>
+  <main class="main">
+    <header class="topbar">
+      <h1>Your Boarding Pass</h1>
+    </header>
+    <canvas id="qrCanvas" width="256" height="256"></canvas>
+     <button onclick="downloadQR()">Download</button>
+     <script src="https://cdn.jsdelivr.net/npm/qrcode@1.5.1/build/qrcode.min.js"></script>
+     <script>
+       const qrData = "PNR: SAS123456\nName: Ravi\nFlight: MAA → DEL\nDate: 2026-01-05";
+       QRCode.toCanvas(document.getElementById("qrCanvas"), qrData, function (error) {
+       if (error) console.error(error);
+       });
+
+       function downloadQR() {
+        const canvas = document.getElementById("qrCanvas");
+        const link = document.createElement("a");
+        link.download = "boarding-pass.png";
+        link.href = canvas.toDataURL("image/png");
+        link.click();
+       }
+      </script>
+    
+    
+    <script src="https://cdn.jsdelivr.net/npm/qrcode@1.5.1/build/qrcode.min.js"></script>
+    <script src="script.js"></script>
+  </main>
+</body>
+</html>

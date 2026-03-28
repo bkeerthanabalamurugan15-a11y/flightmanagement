@@ -1,0 +1,29 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "Run Flask Backend",
+      "type": "python",
+      "request": "launch",
+      "program": "${workspaceFolder}/backend/app.py",
+      "console": "integratedTerminal",
+      "env": {
+        "FLASK_APP": "app.py",
+        "FLASK_ENV": "development"
+      }
+    },
+    {
+      "name": "Run Frontend (Live Server)",
+      "type": "pwa-chrome",
+      "request": "launch",
+      "url": "http://127.0.0.1:5500/frontend/index.html",
+      "webRoot": "${workspaceFolder}/frontend"
+    }
+  ],
+  "compounds": [
+    {
+      "name": "Run Full Stack (Backend + Frontend)",
+      "configurations": ["Run Flask Backend", "Run Frontend (Live Server)"]
+    }
+  ]
+}
